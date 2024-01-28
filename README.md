@@ -1,2 +1,6 @@
-# CharmLog
-Make your terminal string output even more beautiful 💖
+![Image alt](/assets/logo.png)
+
+
+### Make your terminal string output even more beautiful 💖
+
+
