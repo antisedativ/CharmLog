@@ -1,0 +1,28 @@
+name: Check
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install deps
+        run: npm install
+      - name: Lint
+        run: npm run lint
+  test:
+    needs: [lint]
+    strategy:
+      matrix:
+        version: [14, 16, 18]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: uses: actions/setup-node@v4
+          with:
+            node-version: ${{ matrix.version }}
+      - name: Install deps
+        run: npm install
+      - name: Test
+        run: npm run test
