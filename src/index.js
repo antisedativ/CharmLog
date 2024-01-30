@@ -2,3 +2,5 @@
 // Remember the project structure
 
 console.log(1);
+
+console.log(1);
