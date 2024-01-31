@@ -5,6 +5,10 @@ export function printf(text, textFormat) {
 
 	if (textFormat.color) ansiFormatCode += hexToAnsiColor(textFormat.color);
 
+	if (textFormat.backgroundColor)
+		ansiFormatCode +=
+			'\x1b[48' + hexToAnsiColor(textFormat.backgroundColor).slice(4);
+
 	if (textFormat.style)
 		if (textFormat.style == 'normal') ansiFormatCode += '\x1b[23m';
 		else if (textFormat.style == 'italic') ansiFormatCode += '\x1b[3m';
