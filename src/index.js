@@ -1,4 +1,5 @@
-// Methods and utilities here
-// Remember the project structure
+import rainbow from './rainbow/rainbowMethod.js';
 
-console.log(1);
+export default {
+	rainbow,
+};

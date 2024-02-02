@@ -15,5 +15,5 @@ export default function rainbow(text) {
 		const color = hexToAnsiColor(colors[i % colors.length]);
 		result += color + text[i];
 	}
-	return result + '\x1b[0m';
+	console.log(result + '\x1b[0m');
 }
