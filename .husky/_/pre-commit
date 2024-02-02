@@ -1,0 +1,25 @@
+#!/bin/sh
+echo "Install dep"
+
+chmod +x "${BASH_SOURCE%/*}/pre-commit" "${BASH_SOURCE%/*}/pre-push"
+
+echo "Running pre-commit hook"
+
+# Проверка, используется ли флаг --no-verify
+if git rev-parse --verify HEAD >/dev/null 2>&1 ; then
+  against=HEAD
+else
+  against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+# Проверка, есть ли изменения
+if [ "$(git diff --cached --name-only -r $against)" != '' ]; then
+  npm test
+  if [ $? -ne 0 ]; then
+    echo "Tests failed. Commit aborted."
+    exit 1
+  fi
+fi
+
+echo "Pre-commit hook finished"
+exit 0

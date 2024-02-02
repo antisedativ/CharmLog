@@ -1,0 +1,12 @@
+#!/bin/sh
+echo "Running pre-push hook"
+
+npm run lint
+
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Push aborted."
+  exit 1
+fi
+
+echo "Pre-push hook finished"
+exit 0
