@@ -1,4 +1,4 @@
-import { hexToAnsiColor } from '../utils/color.js';
+import { hexToAnsiColor } from '@utils/color.js';
 
 export default function rainbow(text) {
 	let result = '';
