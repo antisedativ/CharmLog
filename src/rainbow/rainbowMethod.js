@@ -11,7 +11,7 @@ export const colors = [
 ];
 export default function rainbow(value) {
 	let text = value;
-	if (typeof text != "string")
+	if (typeof text != 'string')
 		text = anyToString(value);
 	let result = '';
 	for (let i = 0; i < text.length; i++) {
