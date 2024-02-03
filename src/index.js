@@ -1,4 +1,4 @@
-import rainbow from '@src/rainbow/rainbowMethod.js';
+import rainbow from './rainbow/rainbowMethod.js';
 
 export { rainbow };
 

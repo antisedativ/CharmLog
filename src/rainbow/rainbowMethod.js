@@ -1,6 +1,9 @@
-import { hexToAnsiColor } from '@utils/color.js';
+import { hexToAnsiColor } from '../utils/color.js';
+import anyToString from '../utils/anyToString.js';
 
-export default function rainbow(text) {
+export default function rainbow(value) {
+	const text = anyToString(value);
+
 	let result = '';
 	const colors = [
 		'#FF0000',
