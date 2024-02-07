@@ -1,4 +1,11 @@
 import { hexToAnsiColor } from '../utils/color.js';
+import {
+	colorValid,
+	backgroundColorValid,
+	styleValid,
+	fontWeightValid,
+	textDecorationValid,
+} from '../utils/validation.js';
 
 class PrivateSettings {
 	#color = '#ffffff';
@@ -11,31 +18,33 @@ class PrivateSettings {
 		return this.#color;
 	}
 	set color(hexColor) {
-		this.#color = hexColor;
+		if (colorValid(hexColor)) this.#color = hexColor;
 	}
 	get backgroundColor() {
 		return this.#backgroundColor;
 	}
-	set backgroundColor(hexBackgroundColor) {
-		this.#backgroundColor = hexBackgroundColor;
+	set backgroundColor(backgroundColor) {
+		if (backgroundColorValid(backgroundColor))
+			this.#backgroundColor = backgroundColor;
 	}
 	get style() {
 		return this.#style;
 	}
 	set style(style) {
-		this.#style = style;
+		if (styleValid(style)) this.#style = style;
 	}
 	get fontWeight() {
 		return this.#fontWeight;
 	}
 	set fontWeight(fontWeight) {
-		this.#fontWeight = fontWeight;
+		if (fontWeightValid(fontWeight)) this.#fontWeight = fontWeight;
 	}
 	get textDecoration() {
 		return this.#textDecoration;
 	}
 	set textDecoration(textDecoration) {
-		this.#textDecoration = textDecoration;
+		if (textDecorationValid(textDecoration))
+			this.#textDecoration = textDecoration;
 	}
 	getAll() {
 		return {
