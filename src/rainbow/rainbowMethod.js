@@ -1,5 +1,6 @@
 import { hexToAnsiColor } from '../utils/color.js';
 import anyToString from '../utils/anyToString.js';
+
 export const colors = [
 	'#FF0000',
 	'#FF7F00',
@@ -9,10 +10,9 @@ export const colors = [
 	'#0000FF',
 	'#8F00FF',
 ];
+
 export default function rainbow(value) {
-	let text = value;
-	if (typeof text != 'string')
-		text = anyToString(value);
+	let text = anyToString(value);
 	let result = '';
 	for (let i = 0; i < text.length; i++) {
 		const color = hexToAnsiColor(colors[i % colors.length]);

@@ -1,7 +1,5 @@
 import rainbow from './rainbow/rainbowMethod.js';
 
-export { rainbow };
+export const charmlog = { rainbow };
 
-export default {
-	rainbow,
-};
+export default charmlog;
