@@ -6,6 +6,7 @@ import {
 	fontWeightValid,
 	textDecorationValid,
 } from '../utils/validation.js';
+import anyToString from '../utils/anyToString.js';
 
 class PrivateSettings {
 	#color = '#ffffff';
@@ -102,5 +103,5 @@ export function printf(text) {
 			}
 		}
 	}
-	console.log(ansiFormatCode + text + '\x1b[0m');
+	console.log(ansiFormatCode + anyToString(text) + '\x1b[0m');
 }
