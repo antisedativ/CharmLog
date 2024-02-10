@@ -9,6 +9,4 @@ updates:
     allow:
       - dependency-type: "all"
         dependency-name: "*"
-        schedules:
-          - interval: "weekly"
 
