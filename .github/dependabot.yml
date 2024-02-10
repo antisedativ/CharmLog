@@ -1,12 +1,13 @@
 version: 2
 
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: "npm" # Указываем, что используется npm для управления зависимостями
+    directory: "/" # Указываем корневую директорию проекта
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 10
-    allow:
-      - dependency-type: "all"
-        dependency-name: "*"
-
+    open-pull-requests-limit: 1
+    combine:
+      - dependency-name: "*"
+        grouping:
+          - lockfile-name: "package-lock.json"
+            directory: "/"
