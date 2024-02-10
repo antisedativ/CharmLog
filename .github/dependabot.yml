@@ -1,13 +1,17 @@
 version: 2
 
 updates:
-  - package-ecosystem: "npm" # Указываем, что используется npm для управления зависимостями
-    directory: "/" # Указываем корневую директорию проекта
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 1
-    combine:
-      - dependency-name: "*"
-        grouping:
-          - lockfile-name: "package-lock.json"
-            directory: "/"
+      day: "friday"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    allow:
+      - dependency-type: "all"
+        dependency-name: "*"
