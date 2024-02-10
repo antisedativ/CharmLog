@@ -1,5 +1,6 @@
+import { hexRegex } from './constants.js';
+
 export function colorValid(color) {
-	const hexRegex = /^#([0-9A-Fa-f]{6})$/;
 	if (hexRegex.test(color)) return 1;
 	else {
 		console.error('Invalid color format');
@@ -8,7 +9,6 @@ export function colorValid(color) {
 }
 
 export function backgroundColorValid(backgroundColor) {
-	const hexRegex = /^#([0-9A-Fa-f]{6})$/;
 	if (hexRegex.test(backgroundColor) || backgroundColor == 'transparent')
 		return 1;
 	else {
