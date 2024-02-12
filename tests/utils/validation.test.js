@@ -63,3 +63,45 @@ describe('backgroundColorValid', () => {
 		expect(backgroundColorValid(backgroundColor)).toEqual(expected);
 	});
 });
+
+describe('styleValid', () => {
+	test('should check valid style for validity and return true', () => {
+		const style = 'italic';
+		const expected = true;
+		expect(styleValid(style)).toEqual(expected);
+	});
+
+	test('should check invalid style for validity and return false', () => {
+		const style = 'italc';
+		const expected = false;
+		expect(styleValid(style)).toEqual(expected);
+	});
+});
+
+describe('fontWeightValid', () => {
+	test('should check valid font weight for validity and return true', () => {
+		const fontWeight = 'bold';
+		const expected = true;
+		expect(fontWeightValid(fontWeight)).toEqual(expected);
+	});
+
+	test('should check invalid font weight for validity and return false', () => {
+		const fontWeight = 'bld';
+		const expected = false;
+		expect(fontWeightValid(fontWeight)).toEqual(expected);
+	});
+});
+
+describe('textDecorationValid', () => {
+	test('should check valid text decoration for validity and return true', () => {
+		const textDecoration = 'underline';
+		const expected = true;
+		expect(textDecorationValid(textDecoration)).toEqual(expected);
+	});
+
+	test('should check invalid text decoration for validity and return false', () => {
+		const textDecoration = 'underlne';
+		const expected = false;
+		expect(textDecorationValid(textDecoration)).toEqual(expected);
+	});
+})
