@@ -44,6 +44,3 @@ export function black(value) {
     const color = hexToAnsiColor('#000000');
     return color + value + '\x1b[0m';
 }
-
-let gg = 123;
-console.log(yellow(gg));
