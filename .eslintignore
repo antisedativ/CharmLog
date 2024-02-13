@@ -1,0 +1,9 @@
+tests/*
+node_modules
+.husky/*
+.github/*
+.babelrc
+.huskyrc
+.prettierrc
+jest.config.cjs
+dist
