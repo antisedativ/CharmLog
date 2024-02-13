@@ -1,46 +1,19 @@
 import rainbow from './rainbow/rainbowMethod.js';
 import printf from './formatters/LogFormatter.js';
 import settings from './formatters/settings.js';
-import {
-	orange,
-	yellow,
-	cyan,
-	white,
-	black,
-	magenta,
-	green,
-	red,
-	blue,
-} from './oneColor/colorMethod.js';
+import * as colors from './oneColor/colorMethod.js';
 
 const charmlog = {
 	rainbow,
 	printf,
 	settings,
-	orange,
-	yellow,
-	cyan,
-	white,
-	black,
-	magenta,
-	green,
-	red,
-	blue,
+	...colors
 };
 
 export {
 	rainbow,
 	printf,
-	settings,
-	orange,
-	yellow,
-	cyan,
-	white,
-	black,
-	magenta,
-	green,
-	red,
-	blue,
+	settings
 };
 
 export default charmlog;
