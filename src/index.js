@@ -1,7 +1,7 @@
 import rainbow from './rainbow/rainbowMethod.js';
 import printf from './formatters/LogFormatter.js';
 import settings from './formatters/settings.js';
-import * as colors from './oneColor/colorMethod.js';
+import { colors } from './oneColor/colorMethod.js';
 
 const charmlog = {
 	rainbow,
