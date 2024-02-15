@@ -1,6 +1,6 @@
 import { hexToAnsiColor } from '../utils/color.js';
 const logColor = ['#FFFFFF', '#0000FF', '#FF8000', '#F14065', '#FF0000'];
-class Logger {
+export default class Logger {
   constructor(logLevel, single_mode) {
     this.logLevel = logLevel || 'debug';
     this.single_mode = single_mode || false;
