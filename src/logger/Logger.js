@@ -13,10 +13,12 @@ export default class Logger {
     const levelIndex = levels.indexOf(level);
     const currentLevelIndex = levels.indexOf(this.logLevel);
     if (this.single_mode) {
-      if (levelIndex == currentLevelIndex) 
-        console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`); }
-    else if (levelIndex >= currentLevelIndex) 
-        console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`); }
+      if (levelIndex == currentLevelIndex)
+        console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`);
+    }
+    else if (levelIndex >= currentLevelIndex)
+      console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`);
+  }
   reset() {
     this.single_mode = false;
     this.logLevel = 'debug';
