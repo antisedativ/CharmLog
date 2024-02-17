@@ -12,11 +12,7 @@ export default class Logger {
     const levels = ['debug', 'info', 'warning', 'error', 'critical'];
     const levelIndex = levels.indexOf(level);
     const currentLevelIndex = levels.indexOf(this.logLevel);
-    if (this.single_mode) {
-      if (levelIndex == currentLevelIndex)
-        console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`);
-    }
-    else if (levelIndex >= currentLevelIndex)
+    if (levelIndex == currentLevelIndex || (!this.single_mode && levelIndex > currentLevelIndex))
       console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`);
   }
   reset() {
@@ -42,3 +38,4 @@ export default class Logger {
     this.log(message, 'critical');
   }
 }
+
