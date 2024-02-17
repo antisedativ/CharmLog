@@ -1,13 +1,15 @@
 import { logLevelColors } from '../utils/constants.js';
-export default class Logger {
+export class Logger {
   constructor(logLevel, single_mode) {
     this.logLevel = logLevel ?? 'debug';
     this.single_mode = single_mode ?? false;
   }
+
   setLogLevel(logLevel, single_mode = false) {
     this.logLevel = logLevel;
     this.single_mode = single_mode;
   }
+
   log(message, level = 'info') {
     const levels = ['debug', 'info', 'warning', 'error', 'critical'];
     const levelIndex = levels.indexOf(level);
@@ -15,13 +17,16 @@ export default class Logger {
     if (levelIndex == currentLevelIndex || (!this.single_mode && levelIndex > currentLevelIndex))
       console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`);
   }
+
   reset() {
     this.single_mode = false;
     this.logLevel = 'debug';
   }
+
   debug(message) {
     this.log(message, 'debug');
   }
+
   info(message) {
     this.log(message, 'info');
   }
@@ -39,3 +44,4 @@ export default class Logger {
   }
 }
 
+export default Logger;
