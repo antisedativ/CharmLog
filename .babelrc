@@ -10,7 +10,8 @@
 					"@src": "./src",
 					"@tests": "./tests"
 				}
-			}
+			},
+			"@babel/plugin-transform-modules-commonjs"
 		]
 	]
 }
