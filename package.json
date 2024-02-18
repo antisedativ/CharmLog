@@ -2,15 +2,14 @@
 	"name": "charmlog",
 	"version": "1.0.2",
 	"description": "Library to improve logging",
-	"main": "dist/index.js",
 	"module": "dist/index.mjs",
+	"main": "dist/index.js",
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
 		}
 	},
-	"type": "module",
 	"scripts": {
 		"build": "rollup -c",
 		"lint": "eslint .",
