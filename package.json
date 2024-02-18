@@ -1,6 +1,6 @@
 {
 	"name": "charmlog",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Library to improve logging",
 	"main": "index.js",
 	"type": "module",
