@@ -9,5 +9,14 @@ export const color = {
     magenta:'\x1b[38;2;187;38;73m',
     cyan:'\x1b[38;2;0;255;255m',
     white:'\x1b[38;2;255;255;255m',
-    black:'\x1b[38;2;0;0;0m'
+    black:'\x1b[38;2;0;0;0m',
+    ligth_red: '\x1b[38;2;255;40;65m'
+};
+
+export const logLevelColors = {
+    debug: color.white,
+    info: color.blue,
+    warning: color.orange,
+    error: color.ligth_red,
+    critical: color.red
 };
