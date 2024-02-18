@@ -5,10 +5,14 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
+		"build": "rollup -c",
 		"lint": "eslint .",
 		"format": "prettier --write .",
 		"test": "jest",
-		"coverage": "npm test -- --coverage"
+		"coverage": "npm test -- --coverage",
+		"patch": "npm version patch",
+		"minor": "npm version minor",
+		"major": "npm version major"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.23.9",
