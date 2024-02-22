@@ -2,7 +2,7 @@ import rainbow from './rainbow/rainbowMethod.js';
 import printf from './formatters/LogFormatter.js';
 import settings from './formatters/settings.js';
 import { colors } from './oneColor/colorMethod.js';
-
+import { Logger } from './logger/Logger.js';
 const charmlog = {
 	rainbow,
 	printf,
@@ -13,7 +13,8 @@ const charmlog = {
 export {
 	rainbow,
 	printf,
-	settings
+	settings,
+	Logger
 };
 
 export default charmlog;
