@@ -4,6 +4,7 @@
 	"description": "Library to improve logging",
 	"module": "dist/index.mjs",
 	"main": "dist/index.js",
+	"type":"module",
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
