@@ -1,37 +1,33 @@
-name: Build and Release
+# name: Build and Release
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
+#   pull_request:
+#     branches:
+#       - master
 
-jobs:
-  build:
-    name: Build and Release
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     name: Build and Release
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Install dependencies
-        run: npm install
-      - name: Build project
-        run: npm run build
-      - name: Set up Git configuration
-        run: |
-          git config --global user.email "antisedativ@mail.ru"
-          git config --global user.name "antisedativ"
-      - name: Commit new build
-        run: |
-          git add .
-          git commit -am "new build version"
-          git push
-      - name: Bump version and publish to npm
-        run: |
-          npm version patch
-          npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#       - name: Install dependencies
+#         run: npm install
+#       - name: Build project
+#         run: npm run build
+#       - name: Commit new build
+#         run: |
+#           git add .
+#           git commit -am "new build version"
+#           git push
+#       - name: Bump version and publish to npm
+#         run: |
+#           npm version patch
+#           npm publish --access public
+#         env:
+#           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
