@@ -4,12 +4,21 @@ const color = {
     orange: '\x1b[38;2;255;127;0m',
     red: '\x1b[38;2;255;0;0m',
     yellow: '\x1b[38;2;255;255;0m',
-    green:'\x1b[38;2;0;255;0m',
-    blue:'\x1b[38;2;0;0;255m',
-    magenta:'\x1b[38;2;187;38;73m',
-    cyan:'\x1b[38;2;0;255;255m',
-    white:'\x1b[38;2;255;255;255m',
-    black:'\x1b[38;2;0;0;0m'
+    green: '\x1b[38;2;0;255;0m',
+    blue: '\x1b[38;2;0;0;255m',
+    magenta: '\x1b[38;2;187;38;73m',
+    cyan: '\x1b[38;2;0;255;255m',
+    white: '\x1b[38;2;255;255;255m',
+    black: '\x1b[38;2;0;0;0m',
+    ligth_red: '\x1b[38;2;255;40;65m'
+};
+
+const logLevelColors = {
+    debug: color.white,
+    info: color.blue,
+    warning: color.orange,
+    error: color.ligth_red,
+    critical: color.red
 };
 
 function hexToAnsiColor(hexColor) {
@@ -215,6 +224,51 @@ const colors = {
 	black: value => console.log(color.black + handler(value)),
 };
 
+class Logger {
+  constructor(logLevel, single_mode) {
+    this.logLevel = logLevel ?? 'debug';
+    this.single_mode = single_mode ?? false;
+  }
+
+  setLogLevel(logLevel, single_mode = false) {
+    this.logLevel = logLevel;
+    this.single_mode = single_mode;
+  }
+
+  log(message, level = 'info') {
+    const levels = ['debug', 'info', 'warning', 'error', 'critical'];
+    const levelIndex = levels.indexOf(level);
+    const currentLevelIndex = levels.indexOf(this.logLevel);
+    if (levelIndex == currentLevelIndex || (!this.single_mode && levelIndex > currentLevelIndex))
+      console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`);
+  }
+
+  reset() {
+    this.single_mode = false;
+    this.logLevel = 'debug';
+  }
+
+  debug(message) {
+    this.log(message, 'debug');
+  }
+
+  info(message) {
+    this.log(message, 'info');
+  }
+
+  warning(message) {
+    this.log(message, 'warning');
+  }
+
+  error(message) {
+    this.log(message, 'error');
+  }
+
+  critical(message) {
+    this.log(message, 'critical');
+  }
+}
+
 const charmlog = {
 	rainbow,
 	printf,
@@ -222,4 +276,4 @@ const charmlog = {
 	...colors
 };
 
-export { charmlog as default, printf, rainbow, settings };
+export { Logger, charmlog as default, printf, rainbow, settings };
