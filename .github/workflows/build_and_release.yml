@@ -20,6 +20,10 @@ jobs:
         run: npm install
       - name: Build project
         run: npm run build
+      - name: Set up Git configuration
+        run: |
+          git config --global user.email "antisedativ@mail.ru"
+          git config --global user.name "antisedativ"
       - name: Commit new build
         run: |
           git add .
