@@ -1,10 +1,10 @@
 {
 	"name": "charmlog",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Library to improve logging",
 	"module": "dist/index.mjs",
 	"main": "dist/index.js",
-	"type":"module",
+	"type": "module",
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
