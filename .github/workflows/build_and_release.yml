@@ -20,8 +20,11 @@ jobs:
         run: npm install
       - name: Build project
         run: npm run build
-      - name: Check if working directory is clean
-        run: npm cache clean --force
+      - name: Commit new build
+        run: |
+          git add .
+          git commit -am "new build version"
+          git push
       - name: Bump version and publish to npm
         run: |
           npm version patch
