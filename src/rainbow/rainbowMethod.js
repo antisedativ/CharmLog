@@ -11,12 +11,14 @@ export const colors = [
 	'#8F00FF',
 ];
 
-export default function rainbow(value) {
-	let text = anyToString(value);
+export default function rainbow(...values) {
 	let result = '';
-	for (let i = 0; i < text.length; i++) {
-		const color = hexToAnsiColor(colors[i % colors.length]);
-		result += color + text[i];
-	}
+	values.forEach((value, index) => {
+		let text = anyToString(value);
+		for (let i = 0; i < text.length; i++) {
+			const color = hexToAnsiColor(colors[(i + index) % colors.length]);
+			result += color + text[i];
+		}
+	});
 	console.log(result + '\x1b[0m');
 }
