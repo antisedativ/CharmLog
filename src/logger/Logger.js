@@ -10,7 +10,7 @@ export class Logger {
     this.single_mode = single_mode;
   }
 
-  log(message, level = 'info') {
+  log(message, level = 'debug') {
     const levels = ['debug', 'info', 'warning', 'error', 'critical'];
     const levelIndex = levels.indexOf(level);
     const currentLevelIndex = levels.indexOf(this.logLevel);
