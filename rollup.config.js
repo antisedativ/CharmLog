@@ -2,19 +2,19 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 
 export default {
-	input: 'src/index.js', // путь к вашему исходному файлу
+	input: 'src/index.js',
 	output: [
 		{
-			file: 'dist/index.cjs.js', // CommonJS-совместимая версия
+			file: 'dist/index.cjs.js', // CommonJS version
 			format: 'cjs',
 		},
 		{
-			file: 'dist/index.mjs', // ESM-совместимая версия
+			file: 'dist/index.mjs', // ESM version
 			format: 'esm',
 		},
 	],
 	plugins: [
-		resolve(), // разрешает импорты из node_modules
-		commonjs(), // преобразует модули CommonJS в ES6
+		resolve(),
+		commonjs(), // CommonJS -> ES6
 	],
 };
