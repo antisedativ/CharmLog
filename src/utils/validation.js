@@ -1,45 +1,45 @@
 import { hexRegex } from './constants.js';
 
 export function colorValid(color) {
-	if (hexRegex.test(color)) return 1;
+	if (hexRegex.test(color)) return true;
 	else {
 		console.error('Invalid color format');
-		return 0;
+		return false;
 	}
 }
 
 export function backgroundColorValid(backgroundColor) {
 	if (hexRegex.test(backgroundColor) || backgroundColor == 'transparent')
-		return 1;
+		return true;
 	else {
 		console.error('Invalid background color format');
-		return 0;
+		return false;
 	}
 }
 
 export function styleValid(style) {
 	const styleOptions = ['normal', 'italic'];
-	if (styleOptions.includes(style)) return 1;
+	if (styleOptions.includes(style)) return true;
 	else {
 		console.error('Invalid style format');
-		return 0;
+		return false;
 	}
 }
 
 export function fontWeightValid(fontWeight) {
 	const fontWeightOptions = ['normal', 'bold'];
-	if (fontWeightOptions.includes(fontWeight)) return 1;
+	if (fontWeightOptions.includes(fontWeight)) return true;
 	else {
 		console.error('Invalid font weight format');
-		return 0;
+		return false;
 	}
 }
 
 export function textDecorationValid(textDecoration) {
 	const textDecorationOptions = ['none', 'underline', 'line-through'];
-	if (textDecorationOptions.includes(textDecoration)) return 1;
+	if (textDecorationOptions.includes(textDecoration)) return true;
 	else {
 		console.error('Invalid text decoration format');
-		return 0;
+		return false;
 	}
 }
