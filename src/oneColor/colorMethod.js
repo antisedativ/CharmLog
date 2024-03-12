@@ -3,7 +3,7 @@ import { color } from '../utils/constants.js';
 
 const handler = text => anyToString(text);
 
-export const colorMethods = {
+export const colors = {
 	red: (...values) => console.log(color.red + values.map(handler).join(' ') + '\x1b[0m'),
 	orange: (...values) => console.log(color.orange + values.map(handler).join(' ') + '\x1b[0m'),
 	yellow: (...values) => console.log(color.yellow + values.map(handler).join(' ') + '\x1b[0m'),
