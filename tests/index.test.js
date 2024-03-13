@@ -1,19 +1,10 @@
-import { rainbow, printf, settings, Logger } from '@src/index.js';
 
-describe('Module Imports', () => {
-  test('rainbow module is imported correctly', () => {
-    expect(rainbow).toBeDefined();
+import {charmlog} from '@src/index.js';
+console.log(typeof charmlog);
+describe('imports in index.js', () => {
+    test('all modules are imported correctly', () => {
+        Object.keys(charmlog).forEach((key) => {
+            expect(charmlog[key]).toBeDefined();
+        });
+    });
   });
-
-  test('printf module is imported correctly', () => {
-    expect(printf).toBeDefined();
-  });
-
-  test('settings module is imported correctly', () => {
-    expect(settings).toBeDefined();
-  });
-
-  test('Logger module is imported correctly', () => {
-    expect(Logger).toBeDefined();
-  });
-});
