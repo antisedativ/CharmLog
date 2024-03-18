@@ -1,4 +1,4 @@
-import { print, hexToAnsiColor } from '@src/utils/color.js';
+import { print, hexToAnsiColor, rgb } from '@src/utils/color.js';
 
 describe('hexToAnsiColor', () => {
 	test('should convert valid hex color to ANSI color code', () => {
@@ -24,6 +24,25 @@ describe('hexToAnsiColor', () => {
 		const hexColor = '#0f0f'; // Сокращенная запись цвета с альфа-каналом
 		const expected = '\x1b[38;2;0;255;0m'; // Ожидаемый результат для полного шестизначного значения
 		expect(hexToAnsiColor(hexColor)).toEqual(expected);
+	});
+});
+
+describe('rgb', () => {
+	test('should convert valid rgb color to ANSI color code', () => {
+		const red = 0;
+		const green = 255;
+		const blue = 0;
+		const expected = '#00ff00';
+		expect(rgb(red, green, blue)).toEqual(expected);
+	});
+
+	test('should handle invalid rgb color format', () => {
+		const red = 0;
+		const green = -255;
+		const blue = 0;
+		console.error = jest.fn();
+		rgb(red, green, blue);
+		expect(console.error).toHaveBeenCalledWith('Invalid rgb color format');
 	});
 });
 

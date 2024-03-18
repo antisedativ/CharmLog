@@ -4,6 +4,7 @@ import {
 	styleValid,
 	fontWeightValid,
 	textDecorationValid,
+	rgbColorValid,
 } from '@src/utils/validation.js';
 
 describe('colorValid', () => {
@@ -104,4 +105,37 @@ describe('textDecorationValid', () => {
 		const expected = false;
 		expect(textDecorationValid(textDecoration)).toEqual(expected);
 	});
-})
+});
+
+describe('rgbColorValid', () => {
+	test('should check valid rgb color for validity and return true', () => {
+		const red = 12;
+		const green = 12;
+		const blue = 12;
+		const expected = true;
+		expect(rgbColorValid(red, green, blue)).toEqual(expected);
+	});
+
+	test('should check invalid rgb color for validity and return true', () => {
+		const red = 12;
+		const green = 12;
+		const expected = false;
+		expect(rgbColorValid(red, green)).toEqual(expected);
+	});
+
+	test('should check invalid rgb color for validity and return true', () => {
+		const red = 12;
+		const green = -12;
+		const blue = 12;
+		const expected = false;
+		expect(rgbColorValid(red, green, blue)).toEqual(expected);
+	});
+
+	test('should check invalid rgb color for validity and return true', () => {
+		const red = 12;
+		const green = 12;
+		const blue = 'blue';
+		const expected = false;
+		expect(rgbColorValid(red, green, blue)).toEqual(expected);
+	});
+});

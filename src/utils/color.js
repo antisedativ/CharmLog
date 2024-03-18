@@ -1,4 +1,5 @@
 import { hexRegex } from './constants.js';
+import { rgbColorValid } from './validation.js';
 
 export function hexToAnsiColor(hexColor) {
 	if (!hexRegex.test(hexColor)) {
@@ -17,6 +18,19 @@ export function hexToAnsiColor(hexColor) {
 	const blue = parseInt(color.slice(4, 6), 16);
 
 	return `\x1b[38;2;${red};${green};${blue}m`;
+}
+
+export function rgb(red, green, blue) {
+	if (!rgbColorValid(red, green, blue)) return;
+
+	let hexColor = '#';
+	for (let i = 0; i < 3; i++) {
+		let hexColorArgument = arguments[i].toString(16);
+		hexColor +=
+			(hexColorArgument.length == 1 ? '0' : '') + hexColorArgument;
+	}
+
+	return hexColor;
 }
 
 export function print(text, hexColor) {

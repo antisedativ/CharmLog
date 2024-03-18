@@ -43,3 +43,21 @@ export function textDecorationValid(textDecoration) {
 		return false;
 	}
 }
+
+export function rgbColorValid() {
+	if (arguments.length != 3) {
+		console.error('Invalid rgb color format');
+		return false;
+	} else
+		for (let i = 0; i < 3; i++) {
+			if (
+				typeof(arguments[i]) != 'number' ||
+				arguments[i] < 0 ||
+				arguments[i] > 255
+			) {
+				console.error('Invalid rgb color format');
+				return false;
+			}
+		}
+	return true;
+}
