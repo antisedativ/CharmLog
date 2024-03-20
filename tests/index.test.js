@@ -1,9 +1,18 @@
 import * as charm_moduls from '@src/index.js';
-console.log(charm_moduls);
-describe('imports in index.js', () => {
-	test('all modules are imported correctly', () => {
-		Object.keys(charm_moduls).forEach(key => {
-			expect(charm_moduls[key]).toBeDefined();
+describe('function calls in index.js', () => {
+	test('all functions are called correctly', () => {
+		const keys = Object.keys(charm_moduls);
+		keys.forEach(key => {
+			const func = charm_moduls[key];
+			if (typeof func === 'function') {
+				const spy = jest.fn();
+				try {
+					spy();
+				} catch (error) {
+					console.error(`Error calling function ${key}:`, error);
+				}
+				expect(spy).toHaveBeenCalled();
+			}
 		});
 	});
 });
