@@ -20,5 +20,5 @@ export default function rainbow(...values) {
 			result += color + text[i];
 		}
 	});
-	console.log(result + '\x1b[0m');
+	return result + '\x1b[0m';
 }
