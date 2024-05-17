@@ -1,5 +1,5 @@
 import { hexRegex } from './constants.js';
-
+import { TEXT_DECORATIONS, FONT_WEIGHTS, STYLES } from '../utils/constants.js';
 export function colorValid(color) {
 	if (hexRegex.test(color)) return true;
 	else {
@@ -9,6 +9,7 @@ export function colorValid(color) {
 }
 
 export function backgroundColorValid(backgroundColor) {
+
 	if (hexRegex.test(backgroundColor) || backgroundColor == 'transparent')
 		return true;
 	else {
@@ -18,7 +19,7 @@ export function backgroundColorValid(backgroundColor) {
 }
 
 export function styleValid(style) {
-	const styleOptions = ['normal', 'italic'];
+	const styleOptions = Object.values(STYLES);
 	if (styleOptions.includes(style)) return true;
 	else {
 		console.error('Invalid style format');
@@ -27,7 +28,7 @@ export function styleValid(style) {
 }
 
 export function fontWeightValid(fontWeight) {
-	const fontWeightOptions = ['normal', 'bold'];
+	const fontWeightOptions = Object.values(FONT_WEIGHTS);
 	if (fontWeightOptions.includes(fontWeight)) return true;
 	else {
 		console.error('Invalid font weight format');
@@ -36,7 +37,7 @@ export function fontWeightValid(fontWeight) {
 }
 
 export function textDecorationValid(textDecoration) {
-	const textDecorationOptions = ['none', 'underline', 'line-through'];
+	const textDecorationOptions = Object.values(TEXT_DECORATIONS);
 	if (textDecorationOptions.includes(textDecoration)) return true;
 	else {
 		console.error('Invalid text decoration format');
