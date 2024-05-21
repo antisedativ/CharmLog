@@ -3,9 +3,9 @@ import printf from './formatters/LogFormatter.js';
 import settings from './formatters/settings.js';
 import { colors } from './oneColor/colorMethod.js';
 import { Logger } from './logger/Logger.js';
-import charmprint from './charmprint.js';
+import { createCharmedObject, charmprint } from './charmprint.js';
 
-const charmlog = {
+const charmlog_raw = {
 	rainbow,
 	printf,
 	settings,
@@ -20,5 +20,8 @@ export {
 	Logger,
 	charmprint
 };
+const charmlog = createCharmedObject(charmlog_raw);
 
 export default charmlog;
+
+

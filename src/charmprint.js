@@ -1,4 +1,4 @@
-export default function charmprint(func) {
+function charmprint(func) {
     return function(...args) {
         const result = func.apply(this, args);
         if (typeof result === 'string') {
@@ -8,3 +8,16 @@ export default function charmprint(func) {
     };
 }
 
+function createCharmedObject(obj) {
+    return new Proxy(obj, {
+        get(target, property, receiver) {
+            const origMethod = target[property];
+            if (typeof origMethod === 'function') {
+                return charmprint(origMethod).bind(target);
+            }
+            return Reflect.get(target, property, receiver);
+        }
+    });
+}
+
+export  {charmprint, createCharmedObject}
