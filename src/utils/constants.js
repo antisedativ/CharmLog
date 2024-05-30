@@ -20,3 +20,19 @@ export const logLevelColors = {
     error: color.ligth_red,
     critical: color.red
 };
+
+export const TEXT_DECORATIONS = {
+    NONE: 'none',
+    UNDERLINE: 'underline',
+    LINE_THROUGH: 'line-through',
+};
+
+export const FONT_WEIGHTS = {
+    NORMAL: 'normal',
+    BOLD: 'bold',
+};
+
+export const STYLES = {
+    NORMAL: 'normal',
+    ITALIC: 'italic',
+};
