@@ -1,4 +1,3 @@
-// Convert any value to string
 export default function anyToString(value) {
 	if (typeof value === 'string') return value;
 	try {

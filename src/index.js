@@ -5,23 +5,15 @@ import { colors } from './oneColor/colorMethod.js';
 import { Logger } from './logger/Logger.js';
 import { createCharmedObject, charmprint } from './charmprint.js';
 
-const charmlog_raw = {
+const charmlogMethods = {
 	rainbow,
 	printf,
 	settings,
 	...colors,
-	charmprint
+	charmprint,
 };
 
-export {
-	rainbow,
-	printf,
-	settings,
-	Logger,
-	charmprint
-};
-const charmlog = createCharmedObject(charmlog_raw);
+export { rainbow, printf, settings, Logger, charmprint };
+const charmlog = createCharmedObject(charmlogMethods);
 
 export default charmlog;
-
-
