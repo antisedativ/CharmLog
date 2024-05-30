@@ -11,6 +11,7 @@ const charmlogMethods = {
 	settings,
 	...colors,
 	charmprint,
+	Logger,
 };
 
 export { rainbow, printf, settings, Logger, charmprint };
