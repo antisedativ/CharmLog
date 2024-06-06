@@ -2,17 +2,7 @@ import dir from '@src/dir/dir.js';
 import { colors } from '@src/oneColor/colorMethod.js';
 
 describe('dir', () => {
-    let consoleLogSpy;
-
-    beforeEach(() => {
-        consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => { });
-    });
-
-    afterEach(() => {
-        consoleLogSpy.mockRestore();
-    });
-
-    test('should correctly log object properties and their types', () => {
+    test('should correctly format object properties and their types', () => {
         const obj = {
             a: 123,
             b: {
@@ -23,13 +13,13 @@ describe('dir', () => {
             d: 'world'
         };
 
-        dir(obj);
+        const expectedResult = `${colors.red('a')}: ${colors.blue(123)}\n` +
+                               `${colors.red('b')}:\n` +
+                               `  ${colors.red('bb')}: ${colors.blue('hello')}\n` +
+                               `  ${colors.red('ba')}: ${colors.blue('function')}\n` +
+                               `${colors.red('c')}: ${colors.blue('Array [1,2,3]')}\n` +
+                               `${colors.red('d')}: ${colors.blue('world')}\n`;
 
-        expect(consoleLogSpy).toHaveBeenCalledWith(`${colors.red('a')}: ${colors.blue(123)}`);
-        expect(consoleLogSpy).toHaveBeenCalledWith(`${colors.red('b')}:`);
-        expect(consoleLogSpy).toHaveBeenCalledWith(`  ${colors.red('bb')}: ${colors.blue('hello')}`);
-        expect(consoleLogSpy).toHaveBeenCalledWith(`  ${colors.red('ba')}: ${colors.blue('function')}`);
-        expect(consoleLogSpy).toHaveBeenCalledWith(`${colors.red('c')}:  ${colors.blue('Array [1,2,3]')}`);
-        expect(consoleLogSpy).toHaveBeenCalledWith(`${colors.red('d')}: ${colors.blue('world')}`);
+        expect(dir(obj)).toEqual(expectedResult);
     });
 });
