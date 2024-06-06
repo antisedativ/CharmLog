@@ -18,4 +18,5 @@ const charmlogMethods = {
 const charmlog = createCharmedObject(charmlogMethods);
 
 export { rainbow, printf, settings, Logger, dir, charmprint };
+
 export default charmlog;

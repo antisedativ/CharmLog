@@ -37,5 +37,5 @@ export default function printf(...args) {
 		}
 	}
 	const formattedText = args.map(anyToString).join(' ');
-	console.log(ansiFormatCode + formattedText + '\x1b[0m');
+	ansiFormatCode + formattedText + '\x1b[0m';
 }
