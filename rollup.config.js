@@ -5,7 +5,7 @@ export default {
 	input: 'src/index.js',
 	output: [
 		{
-			file: 'dist/index.cjs.js', // CommonJS version
+			file: 'dist/index.cjs', // CommonJS version
 			format: 'cjs',
 		},
 		{
