@@ -3,12 +3,12 @@
 	"version": "1.1.1",
 	"description": "Library to improve logging",
 	"module": "dist/index.mjs",
-	"main": "dist/index.cjs.js",
+	"main": "dist/index.cjs",
 	"type": "module",
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs.js"
+			"require": "./dist/index.cjs"
 		}
 	},
 	"scripts": {
