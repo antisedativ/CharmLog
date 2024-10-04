@@ -8,7 +8,6 @@ import {
 import { TEXT_DECORATIONS, FONT_WEIGHTS, STYLES } from '../utils/constants.js';
 
 class PrivateSettings {
-
     #color = '#ffffff';
     #backgroundColor = 'transparent';
     #style = STYLES.NORMAL;
@@ -18,17 +17,11 @@ class PrivateSettings {
     get color() {
         return this.#color;
     }
-	/**
- * Цвет текста в формате HEX (например, '#ffffff')
- * @type {string}
- */
+
     set color(hexColor) {
         if (colorValid(hexColor)) this.#color = hexColor;
     }
-/**
- * Цвет текста в формате HEX (например, '#ffffff') или transparent
- * @type {string}
- */
+
     get backgroundColor() {
         return this.#backgroundColor;
     }
@@ -47,16 +40,15 @@ class PrivateSettings {
     get fontWeight() {
         return this.#fontWeight;
     }
-    set fontWeight(fontWeight) {
-        if (fontWeightValid(fontWeight)) this.#fontWeight = fontWeight;
+    set fontWeight(weight) {
+        if (fontWeightValid(weight)) this.#fontWeight = weight;
     }
 
     get textDecoration() {
         return this.#textDecoration;
     }
-    set textDecoration(textDecoration) {
-        if (textDecorationValid(textDecoration))
-            this.#textDecoration = textDecoration;
+    set textDecoration(style) {
+        if (textDecorationValid(style)) this.#textDecoration = style;
     }
 
     setTextDecorationNone() {

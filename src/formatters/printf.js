@@ -1,6 +1,6 @@
 import { hexToAnsiColor } from '../utils/color.js';
 import anyToString from '../utils/anyToString.js';
-import settings from './settings.js';
+import settings from './Settings.js';
 
 export default function printf(...args) {
 	const formatMap = {
@@ -37,5 +37,5 @@ export default function printf(...args) {
 		}
 	}
 	const formattedText = args.map(anyToString).join(' ');
-	ansiFormatCode + formattedText + '\x1b[0m';
+	return ansiFormatCode + formattedText + '\x1b[0m';
 }

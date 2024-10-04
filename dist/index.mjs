@@ -133,7 +133,6 @@ function textDecorationValid(textDecoration) {
 }
 
 class PrivateSettings {
-
     #color = '#ffffff';
     #backgroundColor = 'transparent';
     #style = STYLES.NORMAL;
@@ -143,17 +142,11 @@ class PrivateSettings {
     get color() {
         return this.#color;
     }
-	/**
- * Цвет текста в формате HEX (например, '#ffffff')
- * @type {string}
- */
+
     set color(hexColor) {
         if (colorValid(hexColor)) this.#color = hexColor;
     }
-/**
- * Цвет текста в формате HEX (например, '#ffffff') или transparent
- * @type {string}
- */
+
     get backgroundColor() {
         return this.#backgroundColor;
     }
@@ -172,16 +165,15 @@ class PrivateSettings {
     get fontWeight() {
         return this.#fontWeight;
     }
-    set fontWeight(fontWeight) {
-        if (fontWeightValid(fontWeight)) this.#fontWeight = fontWeight;
+    set fontWeight(weight) {
+        if (fontWeightValid(weight)) this.#fontWeight = weight;
     }
 
     get textDecoration() {
         return this.#textDecoration;
     }
-    set textDecoration(textDecoration) {
-        if (textDecorationValid(textDecoration))
-            this.#textDecoration = textDecoration;
+    set textDecoration(style) {
+        if (textDecorationValid(style)) this.#textDecoration = style;
     }
 
     setTextDecorationNone() {
@@ -267,7 +259,8 @@ function printf(...args) {
 			}
 		}
 	}
-	args.map(anyToString).join(' ');
+	const formattedText = args.map(anyToString).join(' ');
+	return ansiFormatCode + formattedText + '\x1b[0m';
 }
 
 const handler = text => anyToString(text);
@@ -285,26 +278,26 @@ const colors = {
 };
 
 class Logger {
-  constructor(logLevel, single_mode) {
+  constructor(logLevel, singleMode) {
     this.logLevel = logLevel ?? 'debug';
-    this.single_mode = single_mode ?? false;
+    this.singleMode = singleMode ?? false;
   }
 
-  setLogLevel(logLevel, single_mode = false) {
+  setLogLevel(logLevel, singleMode = false) {
     this.logLevel = logLevel;
-    this.single_mode = single_mode;
+    this.singleMode = singleMode;
   }
 
   log(message, level = 'debug') {
     const levels = ['debug', 'info', 'warning', 'error', 'critical'];
     const levelIndex = levels.indexOf(level);
     const currentLevelIndex = levels.indexOf(this.logLevel);
-    if (levelIndex == currentLevelIndex || (!this.single_mode && levelIndex > currentLevelIndex))
+    if (levelIndex == currentLevelIndex || (!this.singleMode && levelIndex > currentLevelIndex))
       console.log(`${logLevelColors[level]}[${level.toUpperCase()}] ${message}\x1b[0m`);
   }
 
   reset() {
-    this.single_mode = false;
+    this.singleMode = false;
     this.logLevel = 'debug';
   }
 
