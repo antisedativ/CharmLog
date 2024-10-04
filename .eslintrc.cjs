@@ -4,7 +4,10 @@ module.exports = {
 		es2021: true,
 		jest: true,
 	},
-	extends: 'eslint:recommended',
+	rules: {
+        '@typescript-eslint/no-explicit-any': 'off', // Отключение проверки any
+    },
+	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
 	overrides: [
 		{
 			env: {
@@ -17,6 +20,7 @@ module.exports = {
 		},
 		{
 			files: ['src/**/*.{js,jsx,ts,tsx}'], // Проверять только файлы в папке src
+			parser: '@typescript-eslint/parser',
 			parserOptions: {
 				ecmaVersion: 'latest',
 				sourceType: 'module',
@@ -31,7 +35,7 @@ module.exports = {
 			},
 		},
 	],
-	plugins: ['es6'],
+	plugins: ['es6', '@typescript-eslint'],
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
