@@ -1,6 +1,6 @@
 import rainbow from './rainbow/rainbowMethod.js';
 import printf from './formatters/printf.js';
-import settings from './formatters/Settings.js';
+import settings from './formatters/settings.js';
 import { colors } from './oneColor/colorMethod.js';
 import { Logger } from './logger/Logger.js';
 import { createCharmedObject, charmprint } from './charmprint.js';
