@@ -1,5 +1,6 @@
 import Logger from '@src/logger/Logger.js';
 import { logLevelColors } from '@src/utils/constants.js';
+
 describe('logger', () => {
     let logger;
     beforeEach(() => {

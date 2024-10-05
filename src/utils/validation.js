@@ -1,5 +1,5 @@
-import { hexRegex } from './constants.js';
-import { TEXT_DECORATIONS, FONT_WEIGHTS, STYLES } from '../utils/constants.js';
+import { hexRegex, TEXT_DECORATIONS, FONT_WEIGHTS, STYLES } from '@utils/constants.js';
+
 export function colorValid(color) {
 	if (hexRegex.test(color)) return true;
 	else {
@@ -9,7 +9,6 @@ export function colorValid(color) {
 }
 
 export function backgroundColorValid(backgroundColor) {
-
 	if (hexRegex.test(backgroundColor) || backgroundColor == 'transparent')
 		return true;
 	else {

@@ -1,6 +1,6 @@
 import { hexToAnsiColor } from '../utils/color.js';
 import anyToString from '../utils/anyToString.js';
-import settings from './Settings.js';
+import Settings from './Settings.js';
 
 export default function printf(...args) {
 	const formatMap = {
@@ -26,7 +26,7 @@ export default function printf(...args) {
 
 	let ansiFormatCode = '';
 
-	for (const [key, value] of Object.entries(settings.getAll())) {
+	for (const [key, value] of Object.entries(Settings.getAll())) {
 		const format = formatMap[key];
 		if (format) {
 			if (typeof format === 'function') {
