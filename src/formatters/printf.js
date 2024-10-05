@@ -1,6 +1,6 @@
 import { hexToAnsiColor } from '../utils/color.js';
 import anyToString from '../utils/anyToString.js';
-import settings from './Settings.js';
+import settings from './settings.js';
 
 export default function printf(...args) {
 	const formatMap = {
