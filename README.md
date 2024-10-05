@@ -8,3 +8,68 @@
 ### Make your terminal string output even more beautiful 💖
 
 
+## Info
+
+## Install
+
+```sh
+npm install charmlog
+```
+
+**IMPORTANT:**
+
+
+## Usage
+
+```js
+// ModuleJS
+import charmlog from 'charmlog';
+// CommonJS
+const charmlog = requir('charmlog').default;
+
+charmlog.blue('Hello world!');
+
+```
+
+
+## API
+
+### Colors
+
+- `black`
+- `red`
+- `green`
+- `yellow`
+- `blue`
+- `magenta`
+- `cyan`
+- `white`
+- `blackBright` (alias: `gray`, `grey`)
+- `redBright`
+- `greenBright`
+- `yellowBright`
+- `blueBright`
+- `magentaBright`
+- `cyanBright`
+- `whiteBright`
+
+### Background colors
+
+- `bgBlack`
+- `bgRed`
+- `bgGreen`
+- `bgYellow`
+- `bgBlue`
+- `bgMagenta`
+- `bgCyan`
+- `bgWhite`
+- `bgBlackBright` (alias: `bgGray`, `bgGrey`)
+- `bgRedBright`
+- `bgGreenBright`
+- `bgYellowBright`
+- `bgBlueBright`
+- `bgMagentaBright`
+- `bgCyanBright`
+- `bgWhiteBright`
+
+## Browser support
