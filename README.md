@@ -8,8 +8,6 @@
 ### Make your terminal string output even more beautiful 💖
 
 
-## Info
-
 ## Install
 
 ```sh
@@ -25,7 +23,7 @@ npm install charmlog
 // ModuleJS
 import charmlog from 'charmlog';
 // CommonJS
-const charmlog = requir('charmlog').default;
+const charmlog = require('charmlog').default;
 
 charmlog.blue('Hello world!');
 
