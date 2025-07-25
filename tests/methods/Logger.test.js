@@ -1,5 +1,5 @@
-import Logger from '@src/logger/Logger.js';
-import { logLevelColors } from '@src/utils/constants.js';
+import Logger from '@src/logger/Logger';
+import { logLevelColors } from '@utils/constants';
 
 describe('logger', () => {
     let logger;

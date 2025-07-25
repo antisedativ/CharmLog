@@ -3,12 +3,17 @@ module.exports = {
 	testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$',
 	moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
 	transform: {
-		'^.+\\.[jt]sx?$': 'babel-jest',
+		'^.+\\.tsx?$': 'babel-jest',
+		'^.+\\.jsx?$': 'babel-jest',
+	},
+	moduleNameMapper: {
+		'^@src/(.*)$': '<rootDir>/src/$1',
+		'^@utils/(.*)$': '<rootDir>/src/utils/$1',
 	},
 	coverageReporters: ['json', 'lcov', 'text', 'clover'],
 	collectCoverageFrom: [
 		'src/**/*.{js,jsx,ts,tsx}',
 		'!src/**/*.d.ts',
-		'!src/index.js', // Exclude entry point or files that you don't want to cover
+		'!src/index.ts', // Exclude entry point or files that you don't want to cover
 	],
 };

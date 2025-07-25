@@ -1,5 +1,5 @@
-import { color } from '@src/utils/constants.js';
-import { colors as colorMethods } from '@src/index.js';
+import { color } from '@utils/constants';
+import { colors as colorMethods } from '@src/index';
 
 describe('color', () => {
     test('should return colored nums', () => {

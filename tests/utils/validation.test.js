@@ -4,7 +4,7 @@ import {
 	styleValid,
 	fontWeightValid,
 	textDecorationValid,
-} from '@src/utils/validation.js';
+} from '@utils/validation';
 
 describe('colorValid', () => {
 	test('should check valid hex color for validity and return true', () => {

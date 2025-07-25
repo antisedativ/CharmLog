@@ -1,4 +1,4 @@
-import anyToString from '@utils/anyToString.js';
+import anyToString from '@utils/anyToString';
 
 describe('anyToString', () => {
 	it('should convert number to string', () => {
