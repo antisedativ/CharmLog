@@ -1,5 +1,8 @@
 {
-	"presets": ["@babel/preset-env"],
+	"presets": [
+		"@babel/preset-env",
+		"@babel/preset-typescript"
+	],
 	"plugins": [
 		[
 			"module-resolver",
@@ -10,8 +13,8 @@
 					"@src": "./src",
 					"@tests": "./tests"
 				}
-			},
-			"@babel/plugin-transform-modules-commonjs"
-		]
+			}
+		],
+		"@babel/plugin-transform-modules-commonjs"
 	]
 }

@@ -23,6 +23,12 @@ A modern, lightweight logging library for Node.js that provides beautiful colore
 
 ## 📦 Installation
 
+### Prerequisites
+
+- Node.js 14.0.0 or higher
+
+### Install
+
 ```bash
 npm install charmlog
 ```

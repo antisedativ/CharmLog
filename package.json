@@ -5,6 +5,9 @@
 	"module": "dist/index.mjs",
 	"main": "dist/index.cjs",
 	"type": "module",
+	"engines": {
+		"node": ">=14.0.0"
+	},
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
@@ -27,6 +30,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.23.9",
 		"@babel/preset-env": "^7.23.9",
+		"@babel/preset-typescript": "^7.27.1",
 		"@rollup/plugin-commonjs": "^25.0.7",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-typescript": "^11.1.6",
