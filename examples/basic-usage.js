@@ -1,7 +1,7 @@
 // Basic Usage Examples for CharmLog
 // Run with: node examples/basic-usage.js
 
-const charmlog = require('../dist/index.cjs').default;
+import charmlog from '../dist/index.mjs';
 
 console.log('🎨 CharmLog Basic Usage Examples\n');
 
@@ -46,7 +46,7 @@ const sampleObject = {
 charmlog.dir(sampleObject);
 
 console.log('\n=== Logger Usage ===');
-const { Logger } = require('../dist/index.cjs');
+import { Logger } from '../dist/index.mjs';
 
 const logger = new Logger('info');
 
@@ -57,7 +57,7 @@ logger.error('This error message will show');
 logger.critical('This critical message will show');
 
 console.log('\n=== Core Functions ===');
-const { charmprint, createCharmedObject } = require('../dist/index.cjs');
+import { charmprint, createCharmedObject } from '../dist/index.mjs';
 
 // Wrap a function to auto-log its output
 const add = charmprint((a, b) => a + b);

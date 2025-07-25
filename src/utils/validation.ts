@@ -42,4 +42,4 @@ export function textDecorationValid(textDecoration: string): boolean {
 		console.error('Invalid text decoration format');
 		return false;
 	}
-} 
+}

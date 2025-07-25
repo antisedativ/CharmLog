@@ -4,7 +4,7 @@ import type { DirMethod } from '../../types/index';
 const dir: DirMethod = function dir(obj: any, depth: number = 0, indent: string = '  '): string {
     const indentation = indent.repeat(depth);
     let result = '';
-    for (let prop in obj) {
+    for (const prop in obj) {
         if (typeof obj[prop] === 'object' && obj[prop] !== null) {
             if (obj[prop] instanceof Set || obj[prop] instanceof Array) {
                 const type = Object.prototype.toString.call(obj[prop]).slice(8, -1);
@@ -22,4 +22,4 @@ const dir: DirMethod = function dir(obj: any, depth: number = 0, indent: string 
     return result;
 };
 
-export default dir; 
+export default dir;

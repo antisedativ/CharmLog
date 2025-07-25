@@ -6,4 +6,4 @@ export * from './color';
 export * from './validation';
 export * from './getCurrentDateTime';
 export * from './anyToString';
-export * from './constants'; 
+export * from './constants';

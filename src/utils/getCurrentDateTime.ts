@@ -7,4 +7,4 @@ export default function getCurrentDateTime(): string {
 	const year = now.getFullYear();
 
 	return `${hours}:${minutes} / ${day}.${month}.${year}`;
-} 
+}

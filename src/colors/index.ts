@@ -2,4 +2,4 @@
 export { colors } from './basic/colorMethod';
 
 // Rainbow colors
-export { default as rainbow } from './rainbow/rainbowMethod'; 
+export { default as rainbow } from './rainbow/rainbowMethod';

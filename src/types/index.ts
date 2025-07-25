@@ -38,4 +38,4 @@ export interface CharmlogMethods {
   charmprint: <T extends any[] = any[], R = any>(func: CharmprintFunction<T, R>) => CharmprintFunction<T, R>;
   dir: DirMethod;
   [key: string]: any;
-} 
+}

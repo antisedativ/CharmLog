@@ -35,4 +35,4 @@ export const FONT_WEIGHTS = {
 export const STYLES = {
     NORMAL: 'normal',
     ITALIC: 'italic',
-} as const; 
+} as const;

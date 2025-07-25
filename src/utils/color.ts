@@ -27,4 +27,4 @@ export function print(text: string, hexColor: string): void {
 	} else {
 		console.error('Invalid color format or color not found');
 	}
-} 
+}

@@ -5,4 +5,4 @@ export default function anyToString(value: any): string {
 	} catch (error) {
 		return `Error: ${(error as Error).message}`;
 	}
-} 
+}

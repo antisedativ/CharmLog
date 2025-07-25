@@ -3,14 +3,6 @@ import anyToString from '../utils/anyToString';
 import settings from './settings';
 import type { PrintfMethod } from '../types/index';
 
-interface SettingsData {
-    color: string;
-    backgroundColor: string;
-    style: string;
-    fontWeight: string;
-    textDecoration: string;
-}
-
 const printf: PrintfMethod = function printf(format: string, ...args: any[]): string {
 	const formatMap: Record<string, any> = {
 		color: (color: string) => hexToAnsiColor(color),
@@ -49,4 +41,4 @@ const printf: PrintfMethod = function printf(format: string, ...args: any[]): st
 	return ansiFormatCode + formattedText + '\x1b[0m';
 };
 
-export default printf; 
+export default printf;

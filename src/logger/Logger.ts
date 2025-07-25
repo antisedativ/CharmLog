@@ -1,5 +1,5 @@
 import { logLevelColors } from '../utils/constants';
-import type { LogLevel, LoggerOptions } from '../types/index';
+import type { LogLevel } from '../types/index';
 
 export class Logger {
   private logLevel: LogLevel;
@@ -50,4 +50,4 @@ export class Logger {
   }
 }
 
-export default Logger; 
+export default Logger;

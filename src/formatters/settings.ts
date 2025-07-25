@@ -108,4 +108,4 @@ class PrivateSettings {
 
 const settings = new PrivateSettings();
 
-export default settings; 
+export default settings;

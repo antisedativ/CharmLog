@@ -35,4 +35,4 @@ const charmlogMethods = {
 
 const charmlog = createCharmedObject(charmlogMethods);
 
-export default charmlog; 
+export default charmlog;

@@ -14,4 +14,4 @@ export const colors: Record<string, ColorMethod> = {
 	cyan: (...values: any[]): string => color.cyan + values.map(handler).join(' ') + '\x1b[0m',
 	white: (...values: any[]): string => color.white + values.map(handler).join(' ') + '\x1b[0m',
 	black: (...values: any[]): string => color.black + values.map(handler).join(' ') + '\x1b[0m',
-}; 
+};

@@ -15,7 +15,7 @@ export const colors: string[] = [
 const rainbow: RainbowMethod = function rainbow(...values: any[]): string {
 	let result = '';
 	values.forEach((value, index) => {
-		let text = anyToString(value);
+		const text = anyToString(value);
 		for (let i = 0; i < text.length; i++) {
 			const colorCode = hexToAnsiColor(colors[(i + index) % colors.length] || '#FF0000');
 			result += colorCode + text[i];
@@ -24,4 +24,4 @@ const rainbow: RainbowMethod = function rainbow(...values: any[]): string {
 	return result + '\x1b[0m';
 };
 
-export default rainbow; 
+export default rainbow;

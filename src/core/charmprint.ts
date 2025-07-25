@@ -20,4 +20,4 @@ export function createCharmedObject(obj: CharmedObject): CharmedObject {
 			return Reflect.get(target, property, receiver);
 		},
 	});
-} 
+}
