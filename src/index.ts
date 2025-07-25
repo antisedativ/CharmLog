@@ -19,7 +19,7 @@ export type * from './types/index';
 
 // Default export with all methods
 import { createCharmedObject } from './core/charmprint';
-import { colors } from './colors/index';
+import { colors, rainbow } from './colors/index';
 import printf from './formatters/printf';
 import settings from './formatters/settings';
 import dir from './utils/dir/dir';
@@ -27,6 +27,7 @@ import { charmprint } from './core/charmprint';
 
 const charmlogMethods = {
 	...colors,
+	rainbow,
 	printf,
 	settings,
 	charmprint,

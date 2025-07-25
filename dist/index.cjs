@@ -109,7 +109,7 @@ const colors = [
 const rainbow = function rainbow(...values) {
     let result = '';
     values.forEach((value, index) => {
-        let text = anyToString(value);
+        const text = anyToString(value);
         for (let i = 0; i < text.length; i++) {
             const colorCode = hexToAnsiColor(colors[(i + index) % colors.length] || '#FF0000');
             result += colorCode + text[i];
@@ -359,7 +359,7 @@ class Logger {
 const dir = function dir(obj, depth = 0, indent = '  ') {
     const indentation = indent.repeat(depth);
     let result = '';
-    for (let prop in obj) {
+    for (const prop in obj) {
         if (typeof obj[prop] === 'object' && obj[prop] !== null) {
             if (obj[prop] instanceof Set || obj[prop] instanceof Array) {
                 const type = Object.prototype.toString.call(obj[prop]).slice(8, -1);
@@ -383,6 +383,7 @@ const dir = function dir(obj, depth = 0, indent = '  ') {
 // Core functionality
 const charmlogMethods = {
     ...colors$1,
+    rainbow,
     printf,
     settings,
     charmprint,

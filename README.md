@@ -200,20 +200,6 @@ npm run build
 npm test
 ```
 
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by popular logging libraries like `chalk` and `colors`
-- Built with modern JavaScript and TypeScript
-- Community-driven development
-
-## 📈 Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes.
-
 ---
 
-Made with ❤️ by the CharmLog community
+Made with ❤️ by the Charmlog
