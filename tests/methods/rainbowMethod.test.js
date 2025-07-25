@@ -1,5 +1,5 @@
-import rainbow, { colors } from '@src/rainbow/rainbowMethod.js';
-import { hexToAnsiColor } from '@utils/color.js';
+import rainbow, { colors } from '@src/colors/rainbow/rainbowMethod';
+import { hexToAnsiColor } from '@utils/color';
 
 describe('rainbow', () => {
     test('should return rainbow nums', () => {

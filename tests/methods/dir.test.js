@@ -1,5 +1,5 @@
-import dir from '@src/dir/dir.js';
-import { colors } from '@src/oneColor/colorMethod.js';
+import dir from '@src/utils/dir/dir';
+import { colors } from '@src/colors/basic/colorMethod';
 
 describe('dir', () => {
     test('should correctly format object properties and their types', () => {
@@ -17,7 +17,7 @@ describe('dir', () => {
                                `${colors.red('b')}:\n` +
                                `  ${colors.red('bb')}: ${colors.blue('hello')}\n` +
                                `  ${colors.red('ba')}: ${colors.blue('function')}\n` +
-                               `${colors.red('c')}: ${colors.blue('Array [1,2,3]')}\n` +
+                               `${colors.red('c')}: ${colors.blue('Array 1,2,3')}\n` +
                                `${colors.red('d')}: ${colors.blue('world')}\n`;
 
         expect(dir(obj)).toEqual(expectedResult);

@@ -11,7 +11,7 @@ export const color = {
     white: '\x1b[38;2;255;255;255m',
     black: '\x1b[38;2;0;0;0m',
     ligth_red: '\x1b[38;2;255;40;65m'
-};
+} as const;
 
 export const logLevelColors = {
     debug: color.white,
@@ -19,20 +19,20 @@ export const logLevelColors = {
     warning: color.orange,
     error: color.ligth_red,
     critical: color.red
-};
+} as const;
 
 export const TEXT_DECORATIONS = {
     NONE: 'none',
     UNDERLINE: 'underline',
     LINE_THROUGH: 'line-through',
-};
+} as const;
 
 export const FONT_WEIGHTS = {
     NORMAL: 'normal',
     BOLD: 'bold',
-};
+} as const;
 
 export const STYLES = {
     NORMAL: 'normal',
     ITALIC: 'italic',
-};
+} as const; 

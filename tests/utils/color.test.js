@@ -1,4 +1,4 @@
-import { print, hexToAnsiColor } from '@src/utils/color.js';
+import { print, hexToAnsiColor } from '@utils/color';
 
 describe('hexToAnsiColor', () => {
 	test('should convert valid hex color to ANSI color code', () => {

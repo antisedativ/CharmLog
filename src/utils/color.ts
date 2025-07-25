@@ -1,9 +1,9 @@
-import { hexRegex } from './constants.js';
+import { hexRegex } from './constants';
 
-export function hexToAnsiColor(hexColor) {
+export function hexToAnsiColor(hexColor: string): string {
 	if (!hexRegex.test(hexColor)) {
 		console.error('Invalid HEX color format');
-		return;
+		return '';
 	}
 
 	let color = hexColor.startsWith('#') ? hexColor.slice(1) : hexColor; // Удаляем символ '#' если он есть
@@ -19,7 +19,7 @@ export function hexToAnsiColor(hexColor) {
 	return `\x1b[38;2;${red};${green};${blue}m`;
 }
 
-export function print(text, hexColor) {
+export function print(text: string, hexColor: string): void {
 	const ansiColorCode = hexToAnsiColor(hexColor);
 
 	if (ansiColorCode) {
@@ -27,4 +27,4 @@ export function print(text, hexColor) {
 	} else {
 		console.error('Invalid color format or color not found');
 	}
-}
+} 

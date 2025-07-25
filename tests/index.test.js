@@ -1,4 +1,4 @@
-import * as charm_modules from '@src/index.js';
+import * as charm_modules from '@src/index';
 
 describe('function calls in index.js', () => {
 	test('all functions are called correctly', () => {

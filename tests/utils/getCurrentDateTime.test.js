@@ -1,4 +1,4 @@
-import getCurrentDateTime from '@src/utils/getCurrentDateTime.js';
+import getCurrentDateTime from '@utils/getCurrentDateTime';
 
 describe('getCurrentDateTime', () => {
 	describe('Time formatting', () => {

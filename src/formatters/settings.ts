@@ -4,82 +4,90 @@ import {
     styleValid,
     fontWeightValid,
     textDecorationValid,
-} from '../utils/validation.js';
-import { TEXT_DECORATIONS, FONT_WEIGHTS, STYLES } from '../utils/constants.js';
+} from '../utils/validation';
+import { TEXT_DECORATIONS, FONT_WEIGHTS, STYLES } from '../utils/constants';
+
+interface SettingsData {
+    color: string;
+    backgroundColor: string;
+    style: string;
+    fontWeight: string;
+    textDecoration: string;
+}
 
 class PrivateSettings {
-    #color = '#ffffff';
-    #backgroundColor = 'transparent';
-    #style = STYLES.NORMAL;
-    #fontWeight = FONT_WEIGHTS.NORMAL;
-    #textDecoration = TEXT_DECORATIONS.NONE;
+    #color: string = '#ffffff';
+    #backgroundColor: string = 'transparent';
+    #style: string = STYLES.NORMAL;
+    #fontWeight: string = FONT_WEIGHTS.NORMAL;
+    #textDecoration: string = TEXT_DECORATIONS.NONE;
 
-    get color() {
+    get color(): string {
         return this.#color;
     }
 
-    set color(hexColor) {
+    set color(hexColor: string) {
         if (colorValid(hexColor)) this.#color = hexColor;
     }
 
-    get backgroundColor() {
+    get backgroundColor(): string {
         return this.#backgroundColor;
     }
-    set backgroundColor(backgroundColor) {
+    set backgroundColor(backgroundColor: string) {
         if (backgroundColorValid(backgroundColor))
             this.#backgroundColor = backgroundColor;
     }
 
-    get style() {
+    get style(): string {
         return this.#style;
     }
-    set style(style) {
+    set style(style: string) {
         if (styleValid(style)) this.#style = style;
     }
 
-    get fontWeight() {
+    get fontWeight(): string {
         return this.#fontWeight;
     }
-    set fontWeight(weight) {
+    set fontWeight(weight: string) {
         if (fontWeightValid(weight)) this.#fontWeight = weight;
     }
 
-    get textDecoration() {
+    get textDecoration(): string {
         return this.#textDecoration;
     }
-    set textDecoration(style) {
+    set textDecoration(style: string) {
         if (textDecorationValid(style)) this.#textDecoration = style;
     }
 
-    setTextDecorationNone() {
+    setTextDecorationNone(): void {
         this.textDecoration = TEXT_DECORATIONS.NONE;
     }
 
-    setTextDecorationUnderline() {
+    setTextDecorationUnderline(): void {
         this.textDecoration = TEXT_DECORATIONS.UNDERLINE;
     }
 
-    setTextDecorationLineThrough() {
+    setTextDecorationLineThrough(): void {
         this.textDecoration = TEXT_DECORATIONS.LINE_THROUGH;
     }
 
-    setFontWeightNormal() {
+    setFontWeightNormal(): void {
         this.fontWeight = FONT_WEIGHTS.NORMAL;
     }
 
-    setFontWeightBold() {
+    setFontWeightBold(): void {
         this.fontWeight = FONT_WEIGHTS.BOLD;
     }
 
-    setStyleNormal() {
+    setStyleNormal(): void {
         this.style = STYLES.NORMAL;
     }
 
-    setStyleItalic() {
+    setStyleItalic(): void {
         this.style = STYLES.ITALIC;
     }
 
-    getAll() {
+    getAll(): SettingsData {
         return {
             color: this.#color,
             backgroundColor: this.#backgroundColor,
@@ -89,7 +97,7 @@ class PrivateSettings {
         };
     }
 
-    reset() {
+    reset(): void {
         this.#color = '#ffffff';
         this.#backgroundColor = 'transparent';
         this.#style = STYLES.NORMAL;
@@ -100,4 +108,4 @@ class PrivateSettings {
 
 const settings = new PrivateSettings();
 
-export default settings;
+export default settings; 
